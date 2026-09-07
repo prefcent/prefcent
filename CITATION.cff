@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: prefcent
+message: If you use this software, please cite the 2019 paper.
+type: software
+authors:
+  - family-names: Hellervik
+    given-names: Alexander
+license: MIT
+repository-code: https://github.com/prefcent/prefcent
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Hellervik
+      given-names: A.
+    - family-names: Nilsson
+      given-names: L.
+    - family-names: Andersson
+      given-names: C.
+  title: "Preferential centrality – A new measure unifying urban activity, attraction and accessibility"
+  year: 2019
+  journal: "Environment and Planning B: Urban Analytics and City Science"
+  volume: 46
+  issue: "7"
+  start: 1331
+  end: 1346
+  doi: 10.1177/2399808318812888

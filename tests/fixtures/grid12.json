@@ -1,0 +1,89 @@
+{
+  "generator": "make_dev_fixture.py",
+  "numpy": "1.26.4",
+  "n_zones": 144,
+  "cells": 12,
+  "cell_size": 1000.0,
+  "torus": false,
+  "seed": 0,
+  "iterations": 200,
+  "d0": 5000.0,
+  "self_interaction": false,
+  "update": "direct substitution (update_type='diff', growth_rate=1)",
+  "a0": "R (mod_ratio)",
+  "normalization": "l1_2024 (act_sum * a / sum(a))",
+  "snapshots": [
+    1,
+    2,
+    3,
+    5,
+    10
+  ],
+  "cases": [
+    {
+      "name": "gamma1_beta2",
+      "gamma": 1.0,
+      "beta": 2.0,
+      "alpha_act_add": 1.0,
+      "pref": true,
+      "iterations_run": 200,
+      "final_step_error": 0.0,
+      "sum_a": 201298.80178180616,
+      "sum_R": 201298.80178180616,
+      "min_a": 78.70251961758696,
+      "max_a": 7782.900241777767
+    },
+    {
+      "name": "gamma0_beta2",
+      "gamma": 0.0,
+      "beta": 2.0,
+      "alpha_act_add": 0,
+      "pref": false,
+      "iterations_run": 200,
+      "final_step_error": 1.0256579542012237e-17,
+      "sum_a": 201298.80178180616,
+      "sum_R": 201298.80178180616,
+      "min_a": 114.82538285918882,
+      "max_a": 5978.7668499748515
+    },
+    {
+      "name": "gamma1_beta15",
+      "gamma": 1.0,
+      "beta": 1.5,
+      "alpha_act_add": 1.0,
+      "pref": true,
+      "iterations_run": 200,
+      "final_step_error": 5.5407603419950255e-18,
+      "sum_a": 201298.80178180616,
+      "sum_R": 201298.80178180616,
+      "min_a": 93.84463042228413,
+      "max_a": 6918.570639527504
+    },
+    {
+      "name": "gamma1_beta25",
+      "gamma": 1.0,
+      "beta": 2.5,
+      "alpha_act_add": 1.0,
+      "pref": true,
+      "iterations_run": 200,
+      "final_step_error": 2.661237834611012e-17,
+      "sum_a": 201298.8017818061,
+      "sum_R": 201298.80178180616,
+      "min_a": 65.85105292309278,
+      "max_a": 8837.013952876203
+    },
+    {
+      "name": "gamma05_beta2",
+      "gamma": 0.5,
+      "beta": 2.0,
+      "alpha_act_add": 2.0,
+      "pref": true,
+      "iterations_run": 200,
+      "final_step_error": 0.0,
+      "sum_a": 201298.80178180616,
+      "sum_R": 201298.80178180616,
+      "min_a": 96.06592524262344,
+      "max_a": 6735.846176624181
+    }
+  ]
+}

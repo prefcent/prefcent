@@ -1,0 +1,88 @@
+{
+  "generator": "make_pa_small_fixture.py",
+  "source_model": "Porto Alegre street segments (small extract)",
+  "numpy": "1.26.4",
+  "n_zones": 76,
+  "graph_nodes": 227,
+  "graph_edges": 248,
+  "static_G_nodes": 68,
+  "static_G_edges": 89,
+  "segments_without_zone": 13,
+  "crs": "EPSG:32722",
+  "d0": 5000.0,
+  "self_interaction": false,
+  "iterations": 200,
+  "snapshots": [
+    1,
+    2,
+    3,
+    5,
+    10
+  ],
+  "sum_R": 230416.8093409791,
+  "update": "direct substitution (update_type='diff', growth_rate=1)",
+  "a0": "R (mod_ratio)",
+  "normalization": "l1_2024",
+  "cases": [
+    {
+      "name": "gamma1_beta2",
+      "gamma": 1.0,
+      "beta": 2.0,
+      "alpha_act_add": 1.0,
+      "pref": true,
+      "iterations_run": 200,
+      "final_step_error": 1.6916619006813475e-17,
+      "sum_a": 230416.8093409791,
+      "min_a": 11.452740773993785,
+      "max_a": 9025.605292470691
+    },
+    {
+      "name": "gamma0_beta2",
+      "gamma": 0.0,
+      "beta": 2.0,
+      "alpha_act_add": 0,
+      "pref": false,
+      "iterations_run": 200,
+      "final_step_error": 8.373215559874936e-18,
+      "sum_a": 230416.8093409791,
+      "min_a": 10.802965784190345,
+      "max_a": 9263.802635354714
+    },
+    {
+      "name": "gamma1_beta15",
+      "gamma": 1.0,
+      "beta": 1.5,
+      "alpha_act_add": 1.0,
+      "pref": true,
+      "iterations_run": 200,
+      "final_step_error": 2.7036069665983486e-17,
+      "sum_a": 230416.80934097906,
+      "min_a": 11.262027969064837,
+      "max_a": 8857.14493824993
+    },
+    {
+      "name": "gamma1_beta25",
+      "gamma": 1.0,
+      "beta": 2.5,
+      "alpha_act_add": 1.0,
+      "pref": true,
+      "iterations_run": 200,
+      "final_step_error": 0.0,
+      "sum_a": 230416.8093409791,
+      "min_a": 11.632369764991166,
+      "max_a": 9193.084141011508
+    },
+    {
+      "name": "gamma05_beta2",
+      "gamma": 0.5,
+      "beta": 2.0,
+      "alpha_act_add": 2.0,
+      "pref": true,
+      "iterations_run": 200,
+      "final_step_error": 3.1159579492825145e-17,
+      "sum_a": 230416.80934097906,
+      "min_a": 11.1262314692902,
+      "max_a": 8934.098818313185
+    }
+  ]
+}

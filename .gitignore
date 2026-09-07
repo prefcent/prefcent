@@ -1,0 +1,38 @@
+# Local working material and nested checkouts: never part of the package.
+reference/
+notes/
+/prefcent-*/
+
+# Run outputs and provenance artifacts
+runs/
+artifacts/
+*.manifest.json
+*.npy
+*.npz
+!tests/fixtures/*.npz
+*.h5
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.benchmarks/
+.coverage
+htmlcov/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Tooling run logs
+logs/
