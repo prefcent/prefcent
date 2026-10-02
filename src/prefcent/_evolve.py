@@ -85,11 +85,11 @@ def apply_update(
     inflow_ro = _readonly(inflow)
     try:
         closed = closure.apply(mass_ro, inflow_ro, landscape, _readonly(active))
-    except ClosureDomainBreach as exc:
+    except NumericalBreach as exc:
         if exc.step is None:
             # A closure cannot know the iteration index; the loop attaches it
             # and the state the closure was called with.
-            raise ClosureDomainBreach(
+            raise type(exc)(
                 str(exc.args[0]) if exc.args else "closure domain breach",
                 step=step,
                 state=mass if exc.state is None else exc.state,

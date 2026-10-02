@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.1 — 2026-10-02
+
+### Added
+
+- `DensityPenaltyV1(kappa, rho=2.0)` — the additive, capacity-weighted density
+  penalty closure: `C = inflow − kappa · capacity ⊙ (g − ḡ_R)` with
+  `g = (mass/capacity)^rho`. Built-in identity; fail-stop on domain breach; margin
+  certificate with `kappa_at_zero`. `kappa = 0` reproduces `Identity` exactly.
+
+### Fixed — release review
+
+- Density-penalty margins serialize as finite numbers or `"unbounded"` when the
+  penalty vanishes. At zero strength, the update bypasses penalty arithmetic and
+  reports `"unavailable"` if the optional margin cannot be computed numerically.
+- Non-finite penalty, closed-update, and margin calculations at nonzero strength
+  raise `NumericalBreach` with state and step attached, including final diagnostics.
+
 ## 0.1.0 — 2026-09-07
 
 ### Fixed — release review

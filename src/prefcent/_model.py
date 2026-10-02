@@ -10,7 +10,8 @@ from typing import Any
 import numpy as np
 
 from prefcent._closure import Closure, Identity
-from prefcent._errors import KernelError, ModelDomainError
+from prefcent._density_penalty import DensityPenaltyV1
+from prefcent._errors import KernelError, ModelDomainError, NumericalBreach
 from prefcent._evolve import apply_update
 from prefcent._hashing import hash_array
 from prefcent._kernels import Kernel
@@ -74,7 +75,10 @@ def _kernel_manifest_block(kernel: Kernel) -> dict[str, Any]:
     return block
 
 
-_BUILTIN_CLOSURES: dict[type, str] = {Identity: "identity"}
+_BUILTIN_CLOSURES: dict[type, str] = {
+    Identity: "identity",
+    DensityPenaltyV1: "density_penalty_v1",
+}
 
 
 def _closure_identity(closure: Closure) -> dict[str, Any] | None:
@@ -537,9 +541,19 @@ class Model:
         rmatvec_count += 1
         inflow_final = attraction_final * np.asarray(raw_final, dtype=np.float64)
         inflow_final[~active] = 0.0
-        domain_cert = closure.domain_check(
-            _readonly(mass), _readonly(inflow_final), landscape, _readonly(active)
-        )
+        try:
+            domain_cert = closure.domain_check(
+                _readonly(mass), _readonly(inflow_final), landscape, _readonly(active)
+            )
+        except NumericalBreach as exc:
+            if exc.step is None:
+                # Final diagnostics use step=0, like the final potential check.
+                raise type(exc)(
+                    str(exc.args[0]) if exc.args else "closure certificate breach",
+                    step=0,
+                    state=mass if exc.state is None else exc.state,
+                ) from exc
+            raise
         closure_key = f"closure:{closure.name}"
         certificates: dict[str, Certificate] = {
             "isolated_zones": iso_cert,

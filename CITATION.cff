@@ -1,12 +1,26 @@
 cff-version: 1.2.0
 title: prefcent
-message: If you use this software, please cite the 2019 paper.
+message: Please cite this software, the 2019 paper, and the density-penalty preprint when using the density penalty.
 type: software
 authors:
   - family-names: Hellervik
     given-names: Alexander
+version: 0.1.1
+date-released: '2026-10-02'
+doi: 10.5281/zenodo.22643613
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22643613
+    description: Concept DOI for all versions of prefcent
 license: MIT
 repository-code: https://github.com/prefcent/prefcent
+references:
+  - type: article
+    authors:
+      - family-names: Hellervik
+        given-names: Alexander
+    title: "Preferential centrality with a density penalty: formulation and an open-source implementation"
+    year: 2026
 preferred-citation:
   type: article
   authors:

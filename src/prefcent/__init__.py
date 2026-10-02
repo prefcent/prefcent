@@ -5,6 +5,7 @@ from __future__ import annotations
 from prefcent import kernels
 from prefcent._circulant import CirculantKernel
 from prefcent._closure import Closure, Identity
+from prefcent._density_penalty import DensityPenaltyV1
 from prefcent._errors import (
     ClosureDomainBreach,
     KernelError,
@@ -24,12 +25,13 @@ from prefcent._result import (
     StepInfo,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "Landscape",
     "Model",
     "Identity",
+    "DensityPenaltyV1",
     "Closure",
     "Kernel",
     "DenseKernel",
